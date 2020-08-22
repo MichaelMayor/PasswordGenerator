@@ -3,8 +3,7 @@ var generateBtn = document.querySelector("#generate");
 //generate arrays to pull from
 var capLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowLetters =capLetters.toLowerCase()
-var specialChar = "~`!@#$%^&*()-_=+[{]};:'<,>.?/\"\\";
-var password = "";
+var specialChar = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
 function generatePassword () {
     //prompt password length
@@ -16,6 +15,7 @@ function generatePassword () {
             var passCapLetters = confirm("Include Capital Letters?");
             var passNumbers = confirm("Include Numbers?");
             var passSpecialChar = confirm ("Include Special Characters?");
+            var password = "";
             
             
             
@@ -33,7 +33,7 @@ function generatePassword () {
                 }
                 //special character option
                 if (passSpecialChar) {
-                 var options = options + specialChar[Math.floor(Math.random()*29)];
+                 var options = options + specialChar[Math.floor(Math.random() * specialChar.length)];
                 }
                 //choose option at random
                 currentChar = options[Math.floor(Math.random()*options.length)];
